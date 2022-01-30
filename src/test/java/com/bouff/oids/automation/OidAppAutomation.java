@@ -86,7 +86,7 @@ public class OidAppAutomation {
             boolean value = map.get(key);
             regularTest(key, value);
         }
-
+        System.out.printf("%d cases where checked\n", map.size());
         LOGGER.info(String.format("%d cases where checked\n", map.size()));
     }
 
@@ -99,7 +99,7 @@ public class OidAppAutomation {
         for (String key : list) {
             exceptionTest(key);
         }
-
+        System.out.printf("%d cases where checked\n", list.size());
         LOGGER.info(String.format("%d cases where checked\n", list.size()));
     }
 
@@ -154,9 +154,11 @@ public class OidAppAutomation {
         if (expected) {
             Assert.assertTrue(oidApp.isOidDescendant(oid));
             LOGGER.info(String.format("Input %s \nExpected %s : %b \n Test succeed!\n", oid, oid, expected));
+            System.out.printf("Input %s \nExpected %s : %b \n Test succeed!\n", oid, oid, expected);
         } else {
             Assert.assertFalse(oidApp.isOidDescendant(oid));
             LOGGER.info(String.format("Input %s \nExpected %s : %b \n Test succeed!\n", oid, oid, expected));
+            System.out.printf("Input %s \nExpected %s : %b \n Test succeed!\n", oid, oid, expected);
         }
     }
 
@@ -172,6 +174,7 @@ public class OidAppAutomation {
         } catch (NumberFormatException e) {
             Assert.assertFalse(false);
             LOGGER.info(String.format("Input %s\n Expected NumberFormatException\n Test succeed.\n", oid));
+            System.out.printf("Input %s\n Expected NumberFormatException\n Test succeed.\n", oid);
         }
     }
 }

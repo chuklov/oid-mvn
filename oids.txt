@@ -1,5 +1,7 @@
 {
 "string" : none,
+" " : "none",
+"!@#$" : "none",
 "something" : none,
 "something another" : none,
 "Long string to check the availability of the tool to handle long strings with a lot of characters" : none,
